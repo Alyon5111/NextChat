@@ -75,6 +75,7 @@ import {
   ChatGLM,
   DeepSeek,
   SiliconFlow,
+  Custom,
 } from "../constant";
 import { Prompt, SearchService, usePromptStore } from "../store/prompt";
 import { ErrorBoundary } from "./error";
@@ -1360,6 +1361,47 @@ export function Settings() {
     </>
   );
 
+  const customConfigComponent = accessStore.provider ===
+    ServiceProvider.Custom && (
+    <>
+      <ListItem
+        title={Locale.Settings.Access.Custom.Endpoint.Title}
+        subTitle={
+          Locale.Settings.Access.Custom.Endpoint.SubTitle +
+          DeepSeek.ExampleEndpoint
+        }
+      >
+        <input
+          aria-label={Locale.Settings.Access.Custom.Endpoint.Title}
+          type="text"
+          value={accessStore.customUrl}
+          placeholder={Custom.ExampleEndpoint}
+          onChange={(e) =>
+            accessStore.update(
+              (access) => (access.customUrl = e.currentTarget.value),
+            )
+          }
+        ></input>
+      </ListItem>
+      <ListItem
+        title={Locale.Settings.Access.Custom.ApiKey.Title}
+        subTitle={Locale.Settings.Access.Custom.ApiKey.SubTitle}
+      >
+        <PasswordInput
+          aria-label={Locale.Settings.Access.Custom.ApiKey.Title}
+          value={accessStore.customApiKey}
+          type="text"
+          placeholder={Locale.Settings.Access.Custom.ApiKey.Placeholder}
+          onChange={(e) => {
+            accessStore.update(
+              (access) => (access.customApiKey = e.currentTarget.value),
+            );
+          }}
+        />
+      </ListItem>
+    </>
+  );
+
   const stabilityConfigComponent = accessStore.provider ===
     ServiceProvider.Stability && (
     <>
@@ -1807,6 +1849,7 @@ export function Settings() {
                     </Select>
                   </ListItem>
 
+                  {customConfigComponent}
                   {openAIConfigComponent}
                   {azureConfigComponent}
                   {googleConfigComponent}

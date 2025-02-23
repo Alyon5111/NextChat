@@ -518,6 +518,17 @@ const cn = {
           SubTitle: "样例：",
         },
       },
+      Custom: {
+        ApiKey: {
+          Title: "接口密钥",
+          SubTitle: "使用自定义API Key",
+          Placeholder: "API Key",
+        },
+        Endpoint: {
+          Title: "接口地址",
+          SubTitle: "样例：",
+        },
+      },
       Iflytek: {
         ApiKey: {
           Title: "ApiKey",

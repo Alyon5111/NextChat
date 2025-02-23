@@ -61,9 +61,9 @@ const DEFAULT_SILICONFLOW_URL = isApp
 
 const DEFAULT_ACCESS_STATE = {
   accessCode: "",
-  useCustomConfig: false,
+  useCustomConfig: true,
 
-  provider: ServiceProvider.OpenAI,
+  provider: ServiceProvider.Custom,
 
   // openai
   openaiUrl: DEFAULT_OPENAI_URL,
@@ -132,6 +132,8 @@ const DEFAULT_ACCESS_STATE = {
   siliconflowUrl: DEFAULT_SILICONFLOW_URL,
   siliconflowApiKey: "",
 
+  customUrl: "http://192.168.35.128:11434/",
+  customApiKey: "",
   // server config
   needCode: true,
   hideUserApiKey: false,

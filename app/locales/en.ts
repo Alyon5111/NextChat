@@ -458,6 +458,17 @@ const en: LocaleType = {
           SubTitle: "Example: ",
         },
       },
+      Custom: {
+        ApiKey: {
+          Title: "Custom API Key",
+          SubTitle: "Use a custom API Key",
+          Placeholder: "API Key",
+        },
+        Endpoint: {
+          Title: "Endpoint Address",
+          SubTitle: "Example: ",
+        },
+      },
       XAI: {
         ApiKey: {
           Title: "XAI API Key",
@@ -518,6 +529,7 @@ const en: LocaleType = {
           SubTitle: "Example: ",
         },
       },
+
       CustomModel: {
         Title: "Custom Models",
         SubTitle: "Custom model options, seperated by comma",
